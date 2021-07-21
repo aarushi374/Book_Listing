@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edit_text_height"
+            android:layout_margin="@dimen/search_bar_margin"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_rounded"
+            android:hint="@string/search"
+            android:padding="@dimen/margin" />
+
+        <ImageButton
+            android:id="@+id/button"
+            android:layout_width="@dimen/imagebutton"
+            android:layout_height="@dimen/imagebutton"
+            android:layout_marginTop="@dimen/image_button_margin"
+            android:layout_marginRight="@dimen/image_button_margin"
+            android:layout_toRightOf="@id/searchEditText"
+            android:background="@drawable/selector"
+            android:elevation="20dp"
+            android:onClick="search"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icons" />
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topbar"
+        android:layout_margin="@dimen/margin_large"
+        android:drawSelectorOnTop="true"
+        android:horizontalSpacing="@dimen/margin_large"
+        android:numColumns="2"
+        android:verticalSpacing="@dimen/margin_large"></GridView>
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAppearance="?android:textAppearanceMedium" />
+
+    <ProgressBar
+        android:id="@+id/loading_indicator"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+</RelativeLayout>
